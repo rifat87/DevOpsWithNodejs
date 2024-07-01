@@ -32,7 +32,7 @@ EXPOSE $PORT
 
 
 #Entry Point for the container
-CMD ["npm", "run", "dev"]
+CMD ["node", "app.js"]
 
 # In the context of the dev script in your package.json file, the command nodemon -L app.js will start nodemon in legacy watching mode, watching for changes to the app.js file and restarting the application when changes are detected.
 
