@@ -6,7 +6,16 @@ COPY package.json .
 
 #Here the (.) means the current directory it is same as /app Here package.json file will be copied to /app directory
 
-RUN npm install
+#RUN npm install
+
+#NODE_ENV is a argument which we are going to pass separately
+
+ARG NODE_ENV
+
+RUN if [ "$NODE_ENV" = "development" ]; \
+        then npm install; \
+        else npm install --only=production; \
+        fi
 
 
 #Why we are copying the whole directory to app directory and whats the purpose of copying package.json separately?
